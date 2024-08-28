@@ -1,0 +1,84 @@
+@import "variables.sass"
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap@subset=cyrillic')
+
+body 
+    font-family: Lato, sans-serif
+    color: var(--textcolor)
+    background-color: var(--bgcolor)
+    overflow-x: hidden
+    line-height: 1.3
+
+#app
+  overflow: clip
+  @media(max-width: 1023px) 
+    overflow: hidden
+  
+
+[class*="__container"] 
+  max-width: 1500px
+  margin: 0 auto
+  padding: 0 25px
+  width: 100%
+  @media(max-width: 1023px) 
+    padding: 0 15px
+  
+
+.text-primary
+  color: var(--primary)
+.bg-primary
+  background-color: var(--primary)
+
+.bg-secondary
+  background-color: var(--bgsecondary)
+.bg-main
+  background-color: var(--bgcolor)
+
+.p-selectbutton .p-button
+  background: var(--bgsecondary) !important
+  color: var(--textcolor) !important
+
+.p-inputtext:not(.p-colorpicker-preview)
+  flex:1 1 auto
+  width: 100%
+  background: var(--bgsecondary) !important
+  color: var(--textcolor) !important
+  .items-start &
+    width: auto
+
+.p-radiobutton .p-radiobutton-box, .p-checkbox .p-checkbox-box
+  background: var(--bgsecondary) !important
+  border-color: var(--primary) !important
+
+.p-listbox, .p-listbox .p-listbox-header, .p-multiselect, .p-multiselect-panel .p-multiselect-header, .p-multiselect-panel, .p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token input
+  color: var(--textcolor) !important
+  background: var(--bgsecondary) !important
+
+.p-listbox .p-listbox-list .p-listbox-item, .p-multiselect-panel .p-multiselect-items .p-multiselect-item
+  color: var(--textcolor) !important
+
+.p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover, .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover
+  background: var(--bgcolor) !important
+
+.p-button
+  background: var(--primary) !important
+  border-color: var(--primary) !important
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon
+  background: var(--primary) !important
+
+.p-checkbox .p-checkbox-box .p-checkbox-icon
+  color: var(--primary) !important
+
+.p-slider .p-slider-range, .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider
+  background: var(--primary) !important
+
+.p-knob-value
+  stroke: var(--primary) !important
+
+.p-slider .p-slider-handle
+  border-color: var(--primary) !important
+
+.pi-star:before
+  color: var(--primary) !important
+
+.p-slider:not(.p-disabled) .p-slider-handle:hover
+  background: var(--primary) !important

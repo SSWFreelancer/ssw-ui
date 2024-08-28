@@ -1,0 +1,27 @@
+:root
+    --bgcolor: #f1f5f9
+    --textcolor: #334155
+    --primary: #a855f7
+    --bgsecondary: #ffffff
+    --hover: #f1f5f9
+
+body 
+    transition: all 0.3s ease 0s
+    &.dark-mode
+        --bgcolor: #334155
+        --textcolor: #f1f5f9
+        --primary: #a855f7
+        --bgsecondary: #1f2937
+        --hover: #374151
+    &.black
+        --primary:  var(--textcolor)
+    &.green
+        --primary: rgb(16, 185, 129)
+    &.orange
+        --primary: rgb(249, 115, 22)
+    &.yellow
+        --primary: rgb(234, 179, 8)
+    &.purple
+        --primary: #a855f7      
+    &.blue
+        --primary: rgb(59, 130, 246) 

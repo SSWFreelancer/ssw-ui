@@ -1,0 +1,126 @@
+@import "@/assets/styles/base/variables"
+.header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 1030
+    background: var(--bgsecondary)
+    padding: 15px 0
+    &__container
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 15px
+    &__left
+        display: flex
+        align-items: center
+        gap: 15px
+    &__burger
+        width: 35px
+        flex:0 0 35px
+        height: 35px
+        border-radius: 50%
+        padding:11px 8px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        cursor: pointer
+        transition: all 0.3s ease 0s
+        &:hover
+            background: var(--hover)
+        &:after,&:before, span
+            content:""
+            background: var(--textcolor)
+            width: 100%
+            height: 2px
+            display: block
+            border-radius: 2px
+    &__logo
+        display: flex
+        align-items: center
+        gap: 5px
+        text-transform: uppercase
+        font-size: 20px
+        font-weight: 700
+        white-space: nowrap
+        & svg
+            flex:0 0 30px
+            width: 30px
+            & path
+                fill: var(--primary)
+    &__actions
+        display: flex
+        align-items: center
+        gap: 15px
+    &__item
+        width: 35px
+        flex:0 0 35px
+        height: 35px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: all 0.3s ease 0s
+        &:not(.palette):hover
+            background: var(--hover)
+        &.palette
+            color: var(--bgcolor)
+    
+
+.palette
+    &__body
+        position: absolute
+        top: calc(100% + 15px)
+        right: 25px
+        border:1px solid var(--bgcolor)
+        color: var(--textcolor)
+        font-size: 16px
+        width: 202px
+        pointer-events: none
+        opacity: 0
+        visibility: hidden
+        transition: all 0.3s ease 0s
+        &.active
+            pointer-events: all
+            opacity: 1
+            visibility: visible
+        @media(max-width: 1023px) 
+            padding-right: 15px
+        
+    &__items
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+    &__item
+        flex:0 0 18px
+        height: 18px
+        width: 18px
+        & label
+            display: block
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            cursor: pointer
+            background: var(--primary)
+            transition: all 0.3s ease 0s
+        & input
+            display: none
+            &[value="black"] + label
+                background: var(--textcolor)
+            &[value="green"] + label
+                background: rgb(16, 185, 129)
+            &[value="orange"] + label
+                background: rgb(249, 115, 22)
+            &[value="yellow"] + label
+                background: rgb(234, 179, 8)
+            &[value="purple"] + label
+                background: #a855f7 
+            &[value="blue"] + label
+                background: rgb(59, 130, 246)
+
+                
+            &:checked + label
+                transform: scale(1.2)
