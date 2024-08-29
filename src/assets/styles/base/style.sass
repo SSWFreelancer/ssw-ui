@@ -62,14 +62,12 @@ body
 .p-button
   background: var(--primary) !important
   border-color: var(--primary) !important
-.p-radiobutton .p-radiobutton-box .p-radiobutton-icon
+
+.p-selectbutton .p-button.p-highlight, .p-slider:not(.p-disabled) .p-slider-handle:hover, .p-radiobutton .p-radiobutton-box .p-radiobutton-icon, .p-slider .p-slider-range, .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider
   background: var(--primary) !important
 
-.p-checkbox .p-checkbox-box .p-checkbox-icon
+.p-checkbox .p-checkbox-box .p-checkbox-icon, .pi-star:before
   color: var(--primary) !important
-
-.p-slider .p-slider-range, .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider
-  background: var(--primary) !important
 
 .p-knob-value
   stroke: var(--primary) !important
@@ -77,8 +75,5 @@ body
 .p-slider .p-slider-handle
   border-color: var(--primary) !important
 
-.pi-star:before
-  color: var(--primary) !important
-
-.p-slider:not(.p-disabled) .p-slider-handle:hover
-  background: var(--primary) !important
+.p-listbox .p-listbox-list .p-listbox-item.p-highlight, .p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight
+  background: var(--hover) !important

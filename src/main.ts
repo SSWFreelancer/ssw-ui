@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./assets/styles/tailwind.css";
+import "./assets/flags/flags.css";
 import "./assets/styles/base/style.sass";
 import "primeicons/primeicons.css";
 import "primevue/resources/themes/saga-blue/theme.css";
