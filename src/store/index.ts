@@ -2,15 +2,18 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
+const darkModeState = localStorage.getItem("darkMode");
+const stateValue: boolean = darkModeState == "true";
 
 export default new Vuex.Store({
   state: {
-    isDarkMode: false,
+    isDarkMode: stateValue,
     isMenuOpen: true,
   },
   mutations: {
     TOGGLE_MODE(state) {
       state.isDarkMode = !state.isDarkMode;
+      localStorage.setItem("darkMode", state.isDarkMode.toString());
     },
     TOGGLE_MENU(state) {
       state.isMenuOpen = !state.isMenuOpen;

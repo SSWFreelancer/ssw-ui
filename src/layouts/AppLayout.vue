@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/Footer.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
@@ -28,17 +28,27 @@ import { mapGetters } from "vuex";
   computed: {
     ...mapGetters(["isDarkMode"]),
   },
-  watch: {
-    isDarkMode(newVal) {
-      if (newVal) {
-        document.body.classList.add("dark-mode");
-      } else {
-        document.body.classList.remove("dark-mode");
-      }
-    },
-  },
 })
-export default class AppLayout extends Vue {}
+export default class AppLayout extends Vue {
+  get isDarkMode(): boolean {
+    return this.$store.getters.isDarkMode;
+  }
+
+  @Watch("isDarkMode")
+  onDarkModeChange(newVal: boolean) {
+    if (newVal) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }
+
+  mounted() {
+    if (this.isDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }
+}
 </script>
 
 <style lang="sass" scoped>
